@@ -1,11 +1,30 @@
 # Resolve the problem!!
+from random import randrange as rr
 import string
+
 
 SYMBOLS = list('!"#$%&\'()*+,-./:;?@[]^_`{|}~')
 
 
 def generate_password():
     # Start coding here
+
+    chars = [string.ascii_uppercase, string.ascii_lowercase, string.digits, SYMBOLS]
+    chars2 = chars.copy()
+
+    password = ""
+
+    for i in range(rr(8, 17)):
+        if len(chars2)!= 0:
+            pass
+        else:
+            chars2 = chars.copy()
+
+        ind = rr(len(chars2))
+        password += chars2[ind][rr(len(chars2[ind]))] # Since it's a nested list, I need two random indexes
+        chars2.pop(ind)
+
+    return password
 
 
 def validate(password):
