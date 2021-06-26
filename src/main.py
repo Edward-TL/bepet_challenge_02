@@ -1,7 +1,7 @@
 # Resolve the problem!!
 import string
 
-SYMBOLS = '!"#$%&\'()*+,-./:;?@[]^_`{|}~'
+SYMBOLS = list['!"#$%&\'()*+,-./:;?@[]^_`{|}~']
 
 
 def generate_password():
