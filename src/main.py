@@ -1,7 +1,7 @@
 # Resolve the problem!!
 import string
 
-SYMBOLS = list('!"#$%&\'()*+,-./:;?@[]^_`{|}~')
+SYMBOLS = '!"#$%&\'()*+,-./:;?@[]^_`{|}~'
 
 
 def generate_password():
@@ -10,11 +10,7 @@ def generate_password():
     if con1 != con2:
       print("Las contraseñas no coinciden, intente de nuevo\n\n")
       generate_password()
-    if len(con1) < 8 and len(con1) > 16:
-      print("La contraseña es muy corta o muy larga, intente de nuevo\n\n")
-      generate_password()
-    else:
-      return con1
+    return con1
 
 def validate(password):
     if len(password) >= 8 and len(password) <= 16:
@@ -53,7 +49,7 @@ def run():
     if validate(password):
         print('Secure Password')
     else:
-        print('Insecure Password, Intente de nuevo\n')
+        print('Insecure password, remember to use uppercase and lowercase letters, numbers and symbols, in addition to being greater than 7 characters and less than 17 \n')
         run()
 
 
