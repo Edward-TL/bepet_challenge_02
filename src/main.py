@@ -1,15 +1,22 @@
 # Resolve the problem!!
 import string
 
-SYMBOLS = list('!"#$%&\'()*+,-./:;?@[]^_`{|}~')
+SYMBOLS = '!"#$%&\'()*+,-./:;?@[]^_`{|}~'
 
 
 def generate_password():
-    # Start coding here
-
+    con1 = input("Digite una contraseña nueva: ")
+    con2 = input("Confirmar contraseña: ")
+    if con1 != con2:
+      print("Las contraseñas no coinciden, intente de nuevo\n\n")
+      generate_password()
+    if len(con1) < 8 and len(con1) > 16:
+      print("La contraseña es muy corta o muy larga, intente de nuevo\n\n")
+      generate_password()
+    else:
+      return con1
 
 def validate(password):
-
     if len(password) >= 8 and len(password) <= 16:
         has_lowercase_letters = False
         has_numbers = False
@@ -46,7 +53,8 @@ def run():
     if validate(password):
         print('Secure Password')
     else:
-        print('Insecure Password')
+        print('Insecure Password, Intente de nuevo\n')
+        run()
 
 
 if __name__ == '__main__':
