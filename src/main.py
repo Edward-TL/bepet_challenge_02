@@ -1,11 +1,19 @@
 # Resolve the problem!!
 import string
-
+import random
 SYMBOLS = list('!"#$%&\'()*+,-./:;?@[]^_`{|}~')
 
 
 def generate_password():
-    # Start coding here
+    con = ""
+    for i in range(3):
+        a = random.choice(string.digits)
+        b = random.choice(string.ascii_lowercase)
+        c = random.choice(string.ascii_uppercase)
+        d = random.choice(SYMBOLS)
+        con += a+b+c+d
+    return con
+
 
 
 def validate(password):
