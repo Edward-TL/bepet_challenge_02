@@ -7,17 +7,11 @@ SYMBOLS = list('!"#$%&\'()*+,-./:;?@[]^_`{|}~')
 def generate_password():
     con = ""
     for i in range(3):
-        x = random.choice(string.digits)
-        con += x
-    for i in range(3):
-        x = random.choice(string.ascii_lowercase)
-        con += x
-    for i in range(3):
-        x = random.choice(string.ascii_uppercase)
-        con += x
-    for i in range(3):
-        x = random.choice(SYMBOLS)
-        con += x
+        a = random.choice(string.digits)
+        b = random.choice(string.ascii_lowercase)
+        c = random.choice(string.ascii_uppercase)
+        d = random.choice(SYMBOLS)
+        con += a+b+c+d
     return con
 
 
