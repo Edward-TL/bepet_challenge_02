@@ -1,13 +1,43 @@
 # Resolve the problem!!
 import string
-
+import random
 SYMBOLS = list('!"#$%&\'()*+,-./:;?@[]^_`{|}~')
-
+NUMB = list('0123456789')
+c=[]
+k=[]
+MAY=[]
+MIN=[]
+#Con el metodo chr, convierto de valores enteros a su equivalente en la tabla ASCII
+for i in range(65,91):
+    k=chr(i)
+    MAY.append(k)
+for i in range(97,123):
+    z=chr(i)
+    MIN.append(z)
+MIN= list ("".join(MIN))
+MAY= list ("".join(MAY))
 
 def generate_password():
-    # Start coding here
+    password=[]
+    m=0
+    while m<12:
+        a=random.choice(SYMBOLS)
+        m+=1
+        password.append(a)
+        b=random.choice(MAY)
+        m+=1
+        password.append(b)
+        c=random.choice(MIN)
+        m+=1
+        password.append(c)
+        d=random.choice(NUMB)
+        m+=1
+        password.append(d)
 
+    print(password)
+    return password
 
+    
 def validate(password):
 
     if len(password) >= 8 and len(password) <= 16:
